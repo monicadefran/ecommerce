@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <link rel="stylesheet" href="index.css">
+      <title>Instadron</title>
+   </head>
+   <body>
+      <!-- CONTENEDOR GENERAL -->
+      <main class="container">
+         <!-- HEADER -->
+         <section class="header">
+         <!-- BOTON HAMBURGESA -->
+            <div class ="btn_hamburgesa">
+               <span class="material-symbols-outlined" onclick="openNav()" > menu </span> 
+            </div> 
+
+            <!-- CONTENEDOR DEL LOGO -->
+            <div class="logo"> 
+               <img class="logo1" src="Fotos/logo_dron.png" alt="">
+               <img class="logo2" src="Fotos/logo_marca.png" alt="">
+            </div>
+            <!-- BOTONES NAVEGADOR -->
+            <nav class="nav">
+                  <a><span class="material-symbols-outlined"> search </span></a>
+                  <a><span class="material-symbols-outlined"> account_circle </span></a>
+                  <!-- Icono Carrito-->
+                  <div class="container_icon">
+                     <a><span class="material-symbols-outlined">shopping_cart </span></a>
+                     <!-- Contador de productos-->
+                     <div class="count_products"><span class="contador_productos">1</span></div>
+                     <!-- Pop up productos-->
+                     <div class="container-cart-products hidden-cart">
+                        <div class="cart-product">
+                           <div class="info-cart-product">
+                              <!-- Imagen-->
+                              <div class="card_imagen_carrito_pop_up">
+                                 <img src="Fotos drones/SWIFT-8H.png" alt="">
+                              </div>
+                              <!-- Cantidad-->
+                              <span class="cantidad-producto-carrito">1</span>
+                              <!-- Texto-->
+                              <div class="contenido-producto-carrito">
+                                 <h3 >SWIFT-8H</h3>
+                                 <p>Con modo plegable.</p>
+                              </div>
+                              <!-- Precio-->
+                              <span class="precio-producto-carrito">180€</span>
+                              </div>
+                           </div>
+                           <!-- Total-->
+                           <div class="cart-total">
+                              <h3>Total:</h3>
+                              <span class="total-pagar">180€</span>
+                           </div>
+                           <!-- Boton tramitar-->
+                           <div class="btn_carrito">
+                              <a class="carrito" href="carrito\carrito.html">TRAMITAR</a>
+                           </div>  
+                     </div>
+                     </div>
+            </nav>
+         <!---- Pop-up carrito-->
+         
+         </section>
+         <!-- responsive side nav-->
+         <div class="sideNav" id="sidenav">
+            <a href="#" class="closeBtn" onclick="closeNav()">&#10006;</a>
+            <a href="index.html">Inicio</a>
+            <a href="#">Perfil</a>
+            <a href="#">Buscar</a>
+            <a href="carrito/carrito.html">Carrito</a>
+            <a href="#footer" onclick="closeNav()">Contacto</a>
+         </div>
+
+         <!-- BANER -->
+         <div class="baner">
+            <img src="Fotos/imagenbaner.jpeg" alt="">
+            
+         </div>
+
+         <!-- Filtro(No se le puede añadir animaciones mejor ccs)-->
+            
+            <!-- Botón para abrir el popup -->
+            <label for="popup-toggle" class="filtro-btn">FILTROS</label>
+            
+            <!-- Checkbox que controla la visibilidad del popup -->
+            <input type="checkbox" id="popup-toggle" style="display: none;">
+            
+            <!-- Popup -->
+            <div class="modal">
+               <div class="modal-content">
+                  <label for="popup-toggle" class="close">&times;</label>
+                  <h2>FILTROS</h2>
+                  <hr>
+                  <div class="estructura">
+                        <h3>Estructura</h3>
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1">ALA FIJA</label>
+                        <input type="checkbox" id="checkbox2">
+                        <label for="checkbox2">ALA ROTATORIA</label>
+                  </div>
+                  <hr>
+                  <div class="Nº_Helices">
+                        <h3>Nº HELICES</h3>
+                        <input type="checkbox" id="checkbox3">
+                        <label for="checkbox3">TRICOPTEROS</label>
+                        <input type="checkbox" id="checkbox4">
+                        <label for="checkbox4">CUDRICOPTEROS</label>
+                        <br>
+                        <input type="checkbox" id="checkbox5">
+                        <label for="checkbox5">HEXACOPTEROS </label>
+                        <input type="checkbox" id="checkbox6">
+                        <label for="checkbox5">OCTACOPTEROS</label>
+                  </div>
+                  <hr>
+                  <div class="Tipo_de_uso">
+                        <h3>TIPO DE USO</h3>
+                        <input type="checkbox" id="checkbox7">
+                        <label for="checkbox8">Profesional</label>
+                        <input type="checkbox" id="checkbox8">
+                        <label for="checkbox8">Semiprofesional</label><br>
+                        <input type="checkbox" id="checkbox9">
+                        <label for="checkbox9">recreativo</label>
+                  </div>
+                  <button class="boton_restart">Restart</button>
+               <button class="boton_buscar">Buscar</button>
+               </div>
+            </div>
+
+         <!-- CONTENEDOR PRODUCTOS -->
+         <section class="card_container">
+            <!-- CARTA 1 -->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/AERO-1X.png" alt>
+               </div>
+               <div class="card_contenido">
+                  <h3>AERO-1X</h3>
+                  <p>El AERO-1X es un dron de alta precisión y portátil, ideal para capturar momentos únicos en tus viajes. Su diseño plegable lo hace fácil de transportar y listo para volar en cualquier momento. </p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 2-->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/AERO-4P.jpg" alt="">
+               </div>
+               <div class="card_contenido">
+                  <h3>AERO-4P</h3>
+                  <p>El AERO-4P es un dron de alto rendimiento con un diseño aerodinámico, perfecto para volar con precisión en espacios reducidos. Su tamaño compacto lo hace fácil de transportar y listo para la acción </p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 3 -->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/AERO-7W.jpg" alt="">
+               </div>
+               <div class="card_contenido">
+                  <h3>AERO-7W</h3>
+                  <p>El AERO-7W es un dron resistente que ofrece una experiencia de vuelo estable y segura, incluso en condiciones climáticas adversas. Su diseño robusto lo hace ideal para aventuras al aire libre.</p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 4 -->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/AERO-10G.png" alt>
+               </div>
+               <div class="card_contenido">
+                  <h3>AERO-10G</h3>
+                  <p>El AERO-10G es un dron futurista con tecnología de vanguardia que te lleva a nuevas alturas. Su diseño elegante y su potente motor te brindan una experiencia de vuelo única y emocionante. </p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 5-->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/AERO-11X.png" alt="">
+               </div>
+               <div class="card_contenido">
+                  <h3>AERO-11X</h3>
+                  <p>AERO-11X es un dron de última generación con tecnología avanzada y un diseño innovador. Con su alta precisión y rendimiento, podrás disfrutar de una experiencia de vuelo ágil y dinámica en cualquier situación </p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 6-->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/NIMB-6S.png" alt="">
+               </div>
+               <div class="card_contenido">
+                  <h3>NIMB-6S</h3>
+                  <p>El NIMB-6S es un dron avanzado con un diseño elegante y tecnología de vanguardia, para un vuelo suave y estable. Perfecto para aquellos que buscan calidad y precisión.</p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 7 -->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/SKY-5X.png" alt>
+               </div>
+               <div class="card_contenido">
+                  <h3>SKY-5X</h3>
+                  <p>El SKY-5X es un dron de tamaño medio, perfecto para realizar fotografías y videos aéreos de alta calidad. Su fácil manejo y su diseño compacto lo hacen ideal para viajar y llevarlo contigo donde quiera que vayas.</p>
+               </div>
+               <div class="btn">
+                  <a href="../Drones proyecto/Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 8-->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/SKY-9S.png" alt="">
+               </div>
+               <div class="card_contenido">
+                  <h3>SKY-9S</h3>
+                  <p>El SKY-9S es un dron fácil de usar y llevar, ideal para aquellos que buscan una experiencia de vuelo sencilla. Su diseño intuitivo y estable te permite disfrutar al máximo. </p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 9-->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/SKYV-2T.jpg" alt="">
+               </div>
+               <div class="card_contenido">
+                  <h3>SKYV-2T</h3>
+                  <p>El SKY-2VT es un dron compacto y fácil de transportar con un diseño plegable. Perfecto para capturar vistas impresionantes desde el aire.</p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 10 -->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/SWIFT-8H.png" alt>
+               </div>
+               <div class="card_contenido">
+                  <h3>SWIFT-8H</h3>
+                  <p>El SWIFT-8H es un dron ágil y rápido, diseñado para maniobras impresionantes y una experiencia emocionante de vuelo. Su diseño aerodinámico te permite volar con confianza. </p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+            <!-- CARTA 11-->
+            <div class="card">
+               <div class="card_imagen">
+                  <img src="Fotos drones/AERO-11X.png" alt="">
+               </div>
+               <div class="card_contenido">
+                  <h3>WING-3S</h3>
+                  <p>El WING-3S es un dron de ala fija, ideal para aquellos que buscan una experiencia de vuelo diferente y emocionante </p>
+               </div>
+               <div class="btn">
+                  <a href="Detalle/detalle.html">Ver más</a>
+               </div>
+            </div>
+            <!-- FIN de CARTA-->
+         </section>
+         
+
+
+<!--FOOTER -->
+   <!-- Sección 1: LOGO -->
+      <footer class="footer-container" id="footer">
+         <div class="nombre-web">
+            <img class="logo1" src="Fotos/logo_dron.png" alt="">
+            <img class="logo2" src="Fotos/logo_marca.png" alt="">
+         </div>
+          <!-- Sección 2: CONTACTO-->
+          <div class="contacto">
+             <h3>CONTACTO:</h3>
+            <ul>
+            <li>Calle/Factoria N5-Madrid</li>
+              <li><a href="mail:info@instadrone.com">info@instadrone.com</a></li>
+              <li><a href="tel:912287734">912287734</a></li>
+              
+            </ul>
+          </div>
+          <div class="horario">
+            <h3>HORARIO:</h3>
+            <p>Lunes a Viernes<br>
+             10:OO-14:00 Y 17:00-20:30</p>
+          </div>
+          <!-- Sección 3-->
+          <div class="informacion">
+            <h3>INFORMACIÓN:</h3>
+            <ul>
+              <li>Blog de Drones</li>
+              <li>Proceso de compra</li>
+              <li>Tipos de envío</li>
+              <li>Devoluciones</li>
+              <li>Términos y condiciones</li>
+              <li>Política de privacidad</li>
+            </ul>
+          </div>
+          <!-- Sección 4-->
+          <div class="ayuda">
+            <h3>AYUDA:</h3>
+            <ul>
+              <li>Especialistas en drones</li>
+              <li>Asesoramiento personalizado</li>
+              <li>Servicio Técnico/Postventa</li>
+              <li>Opiniones</li>
+            </ul>
+         </div>
+         <!-- Sección 5-->
+            <div class="redes-sociales">
+               <h3>SÍGUENOS:</h3>
+               <a href="#"><img src="Fotos/icono_facebook.png" alt="Facebook" /></a>
+               <a href="#"><img src="Fotos/icono_twitter.png" alt="Twitter" /></a>
+               <a href="#"><img src="Fotos/icono_instagram.png" alt="Instagram" /></a>
+               <a href="#"><img src="Fotos/icono_youtube.png" alt="Youtube" /></a>
+            </div>
+            <!-- Sección 6: Derechos de autor y políticas -->
+         <div class="copyright">
+            <p>©️ 2023 Instadron, Inc.Informacion legal | Politica de privacidad.</p>
+         </div>
+
+   </footer>
+   </main>
+      <script type = "text/javascript" src="index.js"></script> 
+   </body>
+</html>

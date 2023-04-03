@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <link rel="stylesheet" href="detalle.css">
+      <title>Instadrone</title>
+   </head>
+   <body>
+      <!-- CONTENEDOR GENERAL -->
+      <main class="container">
+         <!-- HEADER -->
+         <section class="header">
+            <!-- MENU HAMBURGESA -->
+            <span class="material-symbols-outlined" onclick="openNav()"> menu </span> 
+            <!-- CONTENEDOR DEL LOGO -->
+            <div class="logo"> 
+               <img class="logo1" src="logo_dron.png" alt="">
+               <img class="logo2" src="logo_marca.png" alt="">
+            </div>
+            <!-- NAVEGADOR MOBIL -->
+            <nav class="nav">
+                  <a><span class="material-symbols-outlined"> search </span></a>
+                  <a><span class="material-symbols-outlined"> account_circle </span></a>
+                  <div class="container_icon">
+                    <a><span class="material-symbols-outlined">shopping_cart </span></a>
+                    <!-- Contador de productos-->
+                    <div class="count_products"><span class="contador_productos">1</span></div>
+                    <!-- Pop up productos-->
+                    <div class="container-cart-products hidden-cart">
+                        <div class="cart-product">
+                            <div class="info-cart-product">
+                                <!-- Imagen-->
+                                <div class="card_imagen_carrito_pop_up">
+                                    <img src="producto2.png" alt="">
+                                </div>
+                                <!-- Cantidad-->
+                                <span class="cantidad-producto-carrito">1</span>
+                                <!-- Texto-->
+                                <div class="contenido-producto-carrito">
+                                    <h3 >SCQTC 9600</h3>
+                                    <p>Con modo plegable.</p>
+                                </div>
+                                <!-- Precio-->
+                                <span class="precio-producto-carrito">180€</span>
+                                </div>
+                            </div>
+                            <!-- Total-->
+                            <div class="cart-total">
+                                <h3>Total:</h3>
+                                <span class="total-pagar">180€</span>
+                            </div>
+                            <!-- Boton tramitar-->
+                            <div class="btn_carrito">
+                                <a href="carrito.html">TRAMITAR</a>
+                            </div>  
+                        </div>
+                    </div>          
+                </nav>
+         </section>
+         <div class="sideNav" id="sidenav">
+            <a href="#" class="closeBtn" onclick="closeNav()">&#10006;</a>
+            <a href="../index.html">Inicio</a>
+            <a href="#">Perfil</a>
+            <a href="#">Buscar</a>
+            <a href="../carrito/carrito.html">Carrito</a>
+            <a href="#footer" onclick="closeNav()">Contacto</a>
+         </div>
+
+         <!-- BANER -->
+
+         <div class="baner">
+            <img src="imagenbaner.jpeg" alt="">
+        </div>
+
+        <!--Carta de producto-->
+        <section class="card_container">
+            <div class="card">
+                <div class="card_imagen slider">
+                   <img id="imagen_det" src="quadrocopter.jpg" alt="image">
+                   <div class="btn_slider">
+                    <button onclick="back()"><span class="material-symbols-outlined">
+                        chevron_left
+                        </span>
+                    </button>
+                    <button onclick="next()"><span class="material-symbols-outlined">
+                        chevron_right
+                        </span>
+                    </button>
+                </div>
+                </div>
+        <!--     -->
+                <div class="card_contenido">
+                   <h2>SCQTC 9600</h2>
+                   <details>
+                        <summary>Descripción:</summary>
+                        <p>El SCQTC 9600 es liviano y, con su modo plegable, lo hace fácil de llevar en sus viajes y fácil de usar al aire libre. Conéctese a través de wi-fi y transmita imágenes con el modo FPV donde podrá ver las imágenes en tiempo real. Puede conducir sin un teléfono celular conectado, sin transmitir la imagen, lo que permite una experiencia más centrada en el uso del dron en sí. Las dos luces LED cerca de la cámara se combinan en entornos con poca luz en los que desea utilizar el dron. Equipado con la función de retención de altitud que estabiliza la imagen, ¡solo tienes que preocuparte por elegir buenos ángulos para tus fotos! Caracteristicas: Resolución de la foto: 4096 x 3072p Resolución de video: 2048 x 1080p Alcance: 100 m Duración de la batería: 10 min despegue automático Modo sin cabeza 360o Posibles acrobacias dos velocidades Hélices con reducción de ruido Múltiples modos de control sensor de gravedad Dimensiones: Abierto 24x20x5cm / Cerrado 12,4x7,4x5cm Incluye: Drone; Mando; Hélices de repuesto; Cable USB; Destornillador; Estuche de transporte; Manual de usuario.</p>
+                  </details> 
+                  <p class="desc">El SCQTC 9600 es liviano y, con su modo plegable, lo hace fácil de llevar en sus viajes y fácil de usar al aire libre. Conéctese a través de wi-fi y transmita imágenes con el modo FPV donde podrá ver las imágenes en tiempo real. Puede conducir sin un teléfono celular conectado, sin transmitir la imagen, lo que permite una experiencia más centrada en el uso del dron en sí. Las dos luces LED cerca de la cámara se combinan en entornos con poca luz en los que desea utilizar el dron. Equipado con la función de retención de altitud que estabiliza la imagen, ¡solo tienes que preocuparte por elegir buenos ángulos para tus fotos! Caracteristicas: Resolución de la foto: 4096 x 3072p Resolución de video: 2048 x 1080p Alcance: 100 m Duración de la batería: 10 min despegue automático Modo sin cabeza 360o Posibles acrobacias dos velocidades Hélices con reducción de ruido Múltiples modos de control sensor de gravedad Dimensiones: Abierto 24x20x5cm / Cerrado 12,4x7,4x5cm Incluye: Drone; Mando; Hélices de repuesto; Cable USB; Destornillador; Estuche de transporte; Manual de usuario.</p>            
+                </div>
+                <div class="cost">
+                    <h3>199€</h3>
+                </div>
+                <div class="btn">
+                   <a href="#">AÑADIR AL CARRITO</a>
+                </div>   
+            </div>
+        </section>
+               
+        <!--  NUEVO-FOOTER -->
+        <!-- Sección 1: LOGO -->
+  
+        <footer class="footer-container">
+            <div class="nombre-web">
+                <img class="logo1" src="logo_dron.png" alt="">
+                <img class="logo2" src="logo_marca.png" alt="">
+            </div>
+            <!-- Sección 2: CONTACTO-->
+            <div class="contacto">
+                <h3>CONTACTO:</h3>
+            <ul>
+            <li>Calle/Factoria N5-Madrid</li>
+                <li><a href="mail:info@instadrone.com">info@instadrone.com</a></li>
+                <li><a href="tel:912287734">912287734</a></li>  
+            </ul>
+            </div>
+            <div class="horario">
+                <h3>HORARIO:</h3>
+                <p>Lunes a Viernes<br>
+                    10:OO-14:00 Y 17:00-20:30</p>
+            </div>
+            <!-- Sección 3-->
+            <div class="informacion">
+            <h3>INFORMACIÓN:</h3>
+                <ul>
+                    <li>Blog de Drones</li>
+                    <li>Proceso de compra</li>
+                    <li>Tipos de envío</li>
+                    <li>Devoluciones</li>
+                    <li>Términos y condiciones</li>
+                    <li>Política de privacidad</li>
+                </ul> 
+                </div>
+            <!-- Sección 4-->
+            <div class="ayuda">
+                <h3>AYUDA:</h3>
+                <ul>
+                    <li>Especialistas en drones</li>
+                    <li>Asesoramiento personalizado</li>
+                    <li>Servicio Técnico/Postventa</li>
+                    <li>Opiniones</li>
+                </ul>
+            </div>
+        <!-- Sección 5-->
+            <div class="redes-sociales">
+                <h3>SÍGUENOS:</h3>
+                <a href="#"><img src="icono_facebook.png" alt="Facebook" /></a>
+                <a href="#"><img src="icono_twitter.png" alt="Twitter" /></a>
+                <a href="#"><img src="icono_instagram.png" alt="Instagram" /></a>
+                <a href="#"><img src="icono_youtube.png" alt="Youtube" /></a>
+            </div>
+            <!-- Sección 6: Derechos de autor y políticas -->
+            <div class="copyright">
+                <p>©️ 2023 Instadron, Inc.Informacion legal | Politica de privacidad.</p>
+            </div>
+        </footer>
+      </main>
+      <script src="slider.js"></script>
+      <!--<script src="../index.js"></script>-->
+   </body>
+</html>

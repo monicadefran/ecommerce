@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="carrito.css">
+    <title>Instadron</title>
+</head>
+
+<body>
+
+    <!-- CONTENEDOR GENERAL -->
+
+    <main class="container">
+
+        <!-- HEADER -->
+
+        <section class="header">
+
+            <!-- MENU HAMBURGUESA -->
+
+            <div class ="btn_hamburgesa">
+                <span class="material-symbols-outlined" onclick="openNav()" > menu </span> 
+            </div>
+
+            <!-- CONTENEDOR DEL LOGO -->
+
+            <div class="logo">
+                <img class="logo1" src="../Fotos/logo_dron.png" alt="">
+                <img class="logo2" src="../Fotos/logo_marca.png" alt="">
+            </div>
+
+            <!-- NAVEGADOR MOBIL -->
+
+            <nav class="nav">
+                <a><span class="material-symbols-outlined"> search </span></a>
+                <a><span class="material-symbols-outlined"> account_circle </span></a>
+
+                <!-- Icono Carrito-->
+
+                <div class="container_icon"></div>
+                <a><span class="material-symbols-outlined">shopping_cart </span></a>
+            </nav>
+
+        </section>
+
+        <!-- responsive side nav-->
+
+         <div class="sideNav" id="sidenav">
+            <a href="#" class="closeBtn" onclick="closeNav()">&#10006;</a>
+            <a href="../index.html">Inicio</a>
+            <a href="#">Perfil</a>
+            <a href="#">Buscar</a>
+            <a href="carrito/carrito.html">Carrito</a>
+            <a href="#footer" onclick="closeNav()">Contacto</a>
+         </div>
+        <!-- CARRITO DE COMPRA -->
+        
+        <section class="carrito">
+
+            <div class="titulo">
+                <h2>Carrito de compra</h2>
+            </div>
+
+            <div class="encabezado">
+                <span></span>
+                <p>Producto</p>
+                <p>Cantidad</p>
+                <p>Precio</p>
+                <p>Total</p>
+              </div>
+
+            <div class="producto-1">
+                <div class="papelera"><span class="material-symbols-outlined">delete</span></div>
+                <div class="contenedor-producto">                
+                <div class="imagen"><img src="../Fotos drones/SWIFT-8H.png" alt></div>
+                <div class="nombre">SWIFT-8H</div>
+            </div>
+
+                <div class="cantidad">
+                    <button class="boton-menos"><span class="material-symbols-outlined">remove</span></button>
+                    <span class="cantidad-numero" id="cantidad-producto-1">1</span>
+                    <button class="boton-mas"><span class="material-symbols-outlined">add</span></button>
+                </div>
+
+                <div class="precio" id="precio-producto-1">100€</div>
+                <div class="total" id="total-producto-1">100€</div>
+            </div>
+
+            <div class="producto-2">
+                <div class="papelera"><span class="material-symbols-outlined">delete</span></div>
+                <div class="contenedor-producto">                
+                <div class="imagen"><img src="../Fotos drones/AERO-1X.png" alt></div>
+                <div class="nombre">AERO-1X</div>
+            </div>
+
+                <div class="cantidad">
+                    <button class="boton-menos"><span class="material-symbols-outlined">remove</span></button>
+                    <span class="cantidad-numero" id="cantidad-producto-2">2</span>
+                    <button class="boton-mas"><span class="material-symbols-outlined">add</span></button>
+                </div>
+
+                <div class="precio" id="precio-producto-2">150€</div>
+                <div class="total" id="total-producto-2">300€</div>
+            </div>
+
+            <div class="actualizar">
+                <button class="boton-actualizar">Actualizar carrito</button>
+            </div>
+
+            <div class="total-carrito">
+              <p>Total del carrito: <span id="total-carrito">400€</span></p>
+            </div>
+
+            <div class="pagar">
+                <button class="boton-pagar">Pagar</button>
+            </div>
+
+        </section>
+
+
+      <!--  NUEVO-FOOTER -->
+
+      <!-- Sección 1: LOGO -->
+  
+      <footer class="footer-container" id="footer">
+         <div class="nombre-web">
+            <img class="logo1" src="../Fotos/logo_dron.png" alt="">
+            <img class="logo2" src="../Fotos/logo_marca.png" alt="">
+         </div>
+
+          <!-- Sección 2: CONTACTO-->
+
+          <div class="contacto">
+             <h3>CONTACTO:</h3>
+            <ul>
+              <li>Calle/Factoria N5-Madrid</li>
+              <li><a href="mail:info@instadrone.com">info@instadrone.com</a></li>
+              <li><a href="tel:912287734">912287734</a></li>
+            </ul>
+          </div>
+          <div class="horario">
+            <h3>HORARIO:</h3>
+            <p>Lunes a Viernes<br>
+             10:OO-14:00 Y 17:00-20:30</p>
+          </div>
+
+          <!-- Sección 3-->
+
+          <div class="informacion">
+            <h3>INFORMACIÓN:</h3>
+            <ul>
+              <li>Blog de Drones</li>
+              <li>Proceso de compra</li>
+              <li>Tipos de envío</li>
+              <li>Devoluciones</li>
+              <li>Términos y condiciones</li>
+              <li>Política de privacidad</li>
+            </ul>
+          </div>
+
+          <!-- Sección 4-->
+
+          <div class="ayuda">
+            <h3>AYUDA:</h3>
+            <ul>
+              <li>Especialistas en drones</li>
+              <li>Asesoramiento personalizado</li>
+              <li>Servicio Técnico/Postventa</li>
+              <li>Opiniones</li>
+            </ul>
+         </div>
+
+         <!-- Sección 5-->
+
+          <div class="redes-sociales">
+            <h3>SÍGUENOS:</h3>
+            <a href="#"><img src="icono_facebook.png" alt="Facebook" /></a>
+            <a href="#"><img src="icono_twitter.png" alt="Twitter" /></a>
+            <a href="#"><img src="icono_instagram.png" alt="Instagram" /></a>
+            <a href="#"><img src="icono_youtube.png" alt="Youtube" /></a>
+          </div>
+
+          <!-- Sección 6: Derechos de autor y políticas -->
+
+     <div class="copyright">
+       <p>©️ 2023 Instadron, Inc.Informacion legal | Politica de privacidad.</p>
+     </div>
+
+    </footer>
+
+  </main>
+  <script type = "text/javascript" src="carrito.js"></script> 
+ </body>
+
+</html>

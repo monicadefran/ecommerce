@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.container{
+width: 100%;
+min-width: 100vh;
+height: auto;
+display: grid;
+grid-template-areas:
+"header header header header header"
+"baner baner baner baner baner"
+"container container container container container"
+"container container container container container"
+"container container container container container"
+"footer footer footer footer footer";
+}
+
+
+/******** HEADER **********/
+.header {
+grid-area:header;
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+align-items: center;
+padding: 2rem;
+gap: 10px;
+}
+.logo{
+align-items: center;
+display: flex;
+}
+.logo1 {
+max-width: 5rem;
+max-height: 5rem;
+}
+.logo2 {
+max-width: 15rem;
+max-height: 5rem;
+}
+
+/*********** Diseño menu lateral **********/
+.material-symbols-outlined{
+    font-size: 40px;
+    cursor: pointer;
+ }
+ 
+ .sideNav{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    background-color:#9ba8ac;
+    overflow-x: hidden;
+    transition: 0.3s ease-in;
+    padding-top: 60px;
+    display: none;
+    font-family: 'Fira Code', monospace;
+   
+ }
+ 
+ .sideNav a {
+    padding: 8px 8px 8px 40px;
+    display: block;
+    font-size: 25px;
+    color:#181818;
+    transition: 0.3s;
+    text-decoration: none;
+ }
+ 
+ .sideNav a:hover{
+    color:white ;
+ }
+ 
+ .closeBtn{
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 20px;
+    margin-left: 50px;
+ 
+ }
+
+ 
+/********* MENU NAVEGACION ***********/
+.nav{
+    display: flex;
+ }
+ 
+ /********** DISEÑO POP-UP CARRITO DE LA COMPRA  ********/
+ 
+ .container_icon{
+    position: relative;
+ }
+ 
+ #contador-productos{
+    font-size: 12px;
+ }
+ .count_products{
+    position: absolute;
+    top:55%;
+    right: 0px;
+    background-color: #000;
+    color: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-family: 'Fira Code', monospace;
+ }
+ /*
+ Necesitamos siempre crear una clase hidden con el atributo 
+ none para poder activar el toggle en el js y modificar la 
+ disposicion de los elementos
+ */
+ .hidden-cart{
+    display: none;
+ }
+ 
+ .card_imagen_carrito_pop_up img{
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px 5px;
+    box-shadow: 0 4px 8px 0 rgba(118,122,131, 0.785), 0 6px 20px 0 rgba(249, 249, 250, 0.95)
+ 
+ }
+ 
+ .container-cart-products{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    background-color: rgb(241 241 241);
+    width: 500px;
+    z-index: 1;
+    min-height: 40vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    Font-family: 'Fira Code', monospace;
+ }
+ .cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+    display: inline-block;
+     margin: 19px auto;
+ }
+ 
+ .cart-product{
+    padding: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+ }
+ .info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+ }
+ 
+ .contenido-producto-carrito{
+    display: inline-block;
+    margin: 15px auto;
+    
+ }
+ .contenido-producto-carrito h3{
+    font-size: 20px;
+ }
+ .precio-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+    display: inline-block;
+    margin: 19px auto;
+ }
+ .cart-total{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 20px 45px;
+    gap: 20px;
+ }
+ .cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+ }
+ .total-pagar{
+    font-size: 20px;
+    font-weight: 900;
+ }
+ 
+ .btn_carrito a{
+    background-color: rgb(101, 101, 202);
+    color: #fff;
+    max-width: fit-content;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(101, 101, 202);
+    text-decoration: none;
+    
+ }
+
+
+   /******** BANER **********/
+   .baner{
+   grid-area:baner;
+  
+
+   }
+
+   .baner img {
+      
+      width: 100%;
+      height: auto;;
+      object-fit: cover;
+   }
+
+   /******** CARD CONTAINER **********/
+
+   .card_container {
+      grid-area: container;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      font-family: 'Fira Code', monospace;
+      
+   
+   }
+
+   .card {
+      display: grid;
+      width: 100%;
+      grid-template-areas:
+      "imagen"
+      "contenido"
+      "precio"
+      "boton";
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      text-align: center;
+      justify-items: center;
+      margin: 10px;
+      font-size: 13px;
+ } 
+ 
+   .card_imagen {
+      grid-area: imagen;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /*max-width:100%;
+      min-width: 40%;*/
+   }
+ 
+ .card_imagen img{
+    max-width:100%;
+    height: auto;
+    border-radius: 5px 0px;
+    max-height: 800px;
+ }
+
+ .btn_slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+
+ }
+ .btn_slider button{
+    background: none;
+    outline: none;
+    border: none;
+    color: #9ba8ac;
+ }
+ .btn_slider button span{
+    font-size: 60px;
+ }
+
+ 
+ .card_contenido {
+    grid-area: contenido;
+    font-family: 'Fira Code', monospace;
+    max-width: 70%;
+ }
+ 
+ .card_contenido h2 {
+ color:black;
+ font-weight: 600;
+ padding: 20px;
+ }
+
+ p.desc {
+    display: none;
+ }
+
+ details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  
+ .card_contenido summary {
+    
+    font-size: large;
+    color: blue;
+    background-color: #33333336;
+ }
+
+ .cost{
+    grid-area: precio;
+    margin-bottom: 20px;
+ }
+
+ .cost h3{
+    color:black;
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    padding: 10px;
+
+ }
+ 
+ .btn{
+    grid-area: boton;
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 20px;
+ }
+ 
+ .btn a {
+    background-color: rgb(101, 101, 202);
+    color: #fff;
+    max-width: fit-content;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(101, 101, 202);
+    text-decoration: none;
+ 
+ }
+
+
+
+/* SIMBOLOS DE MATERIAL */
+.material-symbols-outlined {
+   font-variation-settings:
+   'FILL' 0,
+   'wght' 400,
+   'GRAD' 0,
+   'opsz' 40
+}
+/* DEFINIR MI NUEVO FOOTER*/
+.footer-container {
+   grid-area: footer;
+   display: grid;
+   grid-template-areas: 
+   "nombre-web nombre-web nombre-web"
+   "contacto horario informacion"
+   "ayuda ayuda redes-sociales"
+   "copyright copyright copyright";
+   gap:20px;
+   padding-bottom:20px;
+   background-color:#f8f8f8;
+   color:#333;
+   font-size:14px ;
+  text-align: center;
+  align-items:center;
+  font-family: 'Fira Code', monospace;
+  margin-top: 20px;
+  
+  
+ }
+ .nombre-web {
+  grid-area: nombre-web;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ .nombre-web img {
+   max-height: 100%;
+   margin-right: 30px;
+ }
+ .contacto ul {
+   grid-area:contacto;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+ }
+ .contacto li {
+   grid-area:contacto;
+   margin-bottom: 5px;
+  }
+
+  .contacto a {
+   text-decoration: none;
+   color: black;
+  }
+ .informacion {
+  grid-area: informacion;
+   margin: 0;
+   padding: 0;
+   margin-bottom:5px;
+ }
+.informacion ul{
+   list-style: none;
+}
+.informacion h3{
+margin: 10px;
+}
+ 
+ .ayuda ul {
+  grid-area:ayuda ;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .ayuda li {
+   margin-bottom: 5px;
+  }
+ 
+
+   
+ /* Estilo para las redes sociales */
+ .redes-sociales a { 
+   display: inline-block;
+   margin-right: 10px;
+
+ }
+ 
+ .redes-sociales img {
+   max-height: 30px;
+   max-width: 100%;
+ }
+.redes-sociales{
+   grid-area: redes-sociales;
+   justify-content: space-around;
+}
+
+
+ /* Estilo para los títulos de las secciones */
+ .footer-container h3 {
+   margin: 0;
+   font-size: 18px;
+   font-weight: bold;
+   margin-bottom: 10px;
+   display: grid;
+ }
+   .nombre-web {
+     text-align: center;
+     margin-bottom: 20px;
+   }
+ 
+   .redes-sociales {
+     text-align: center;
+   }
+   .copyright{
+      grid-area: copyright;
+
+   }
+
+
+
+
+/*******   Vista Navegador tarjeta de producto  ***********/
+
+
+@media only screen and (min-width: 1200px){
+
+    .card {
+        display: grid;
+        grid-template-areas: 
+        "imagen contenido"
+        "imagen contenido"
+        "imagen precio"
+        "imagen boton";
+        width: 100%;
+        grid-gap: 20px;
+     } 
+
+     .card_contenido {
+        grid-area: contenido;
+     }
+
+     .card_imagen {
+        grid-area: imagen;
+        
+     }
+
+     .card_contenido summary {
+        display: none;
+     }
+
+     p.desc {
+        display: grid;
+     }
+
+     .btn_slider{
+        width: 40%;
+     }
+
+     .btn_slider button:hover span{
+        color: dimgray;
+     }
+
+     .btn_slider button span {
+        font-size: 40px;
+    }
+    
+   }
+
+   
+   
+   @media only screen and (max-width: 450px) {
+
+      /* Header */
+   
+   .logo .material-symbols-outlined{
+      font-size: 20px;
+   }
+
+   /* Filtro */
+   .modal-content {
+      width: 320px;
+      height: 420px;
+   }
+   .modal h2, .modal h3 {
+      margin: 5px 10px;
+      line-height: 10px;
+   }
+   .modal h2{
+      font-size: 20px;
+   }
+   .modal h3{
+      font-size: 15px;
+   }
+   label{
+      font-size: 15px;
+      margin-bottom: 10px;
+   }
+   hr{
+      margin: 10px 10px;
+      width: 250px;
+   }
+
+   /* COUNT PRODUCTS*/
+   .count_products{
+      right: -7px;
+      width: 15px;
+      height: 15px;
+   }
+
+
+    .footer-container {
+       grid-template-areas: 
+       "nombre-web"
+       "redes-sociales"
+       "copyright";
+       grid-template-columns: 1fr;
+       text-align: center;
+         }
+         .contacto{
+          display:none;
+         }
+         .horario{
+            display:none;
+         }
+         .informacion{
+         display:none;
+         }
+         .ayuda{
+            display:none;
+         }
+         .redes-sociales h3{
+            display: none;
+         }
+         .nombre-web .logo1{
+            width: 100px;
+            height: 100px;
+            margin-right: 0;
+         }
+         .nombre-web .logo2{
+         width: 200px;
+         height: 50px;
+ 
+       }
+   } 
+
+       @media only screen and (max-width: 380px){
+
+         .logo .material-symbols-outlined{
+            font-size: 16px;
+         }
+       
+      
+         /* COUNT PRODUCTS*/
+         .count_products{
+            right: -7px;
+            width: 15px;
+            height: 15px;
+         }
+
+         .footer-container {
+            grid-template-areas: 
+            "nombre-web"
+            "redes-sociales"
+            "copyright";
+            grid-template-columns: 1fr;
+            text-align: center;
+              }
+              .contacto{
+               display:none;
+              }
+              .horario{
+                 display:none;
+              }
+              .informacion{
+              display:none;
+              }
+              .ayuda{
+                 display:none;
+              }
+              .redes-sociales h3{
+                 display: none;
+              }
+              .nombre-web .logo1{
+                 width: 100px;
+                 height: 100px;
+                 margin-right: 0;
+              }
+              .nombre-web .logo2{
+              width: 200px;
+              height: 50px;
+      
+            }
+         
+      }
+
