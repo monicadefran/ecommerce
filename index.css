@@ -363,7 +363,8 @@ input[type=checkbox]{
    grid-template-areas:
    "imagen"
    "contenido"
-   "boton";
+   "boton"
+   "boton2";;
    background-color: #fff;
    border: 1px solid #ccc;
    border-radius: 5px;
@@ -412,7 +413,23 @@ font-weight: 600;
    border-radius: 10px;
    border-color: rgb(101, 101, 202);
    text-decoration: none;
+}
 
+.btn_add_producto{
+   grid-area: boton2;
+   align-self: center;
+   justify-self: center;
+   margin-top: 10px;
+}
+
+.btn_add_producto button {
+   background-color: black;
+   color: #fff;
+   /*max-width: 105px;*/
+   font-weight: 600;
+   padding: 5px;
+   border-radius: 10px;
+   border-color: black;
 }
 
 /******** FOOTER **********/
