@@ -637,7 +637,8 @@ margin: 10px;
 
 
    .footer-container {
-      grid-template-areas: 
+      grid-template-areas:
+      "boton_arriba" 
       "nombre-web"
       "redes-sociales"
       "copyright";
