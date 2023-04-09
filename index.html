@@ -12,7 +12,7 @@
       <!-- CONTENEDOR GENERAL -->
       <main class="container">
          <!-- HEADER -->
-         <section class="header">
+         <section class="header" id="header">
          <!-- BOTON HAMBURGESA -->
             <div class ="btn_hamburgesa">
                <span class="material-symbols-outlined" onclick="openNav()" > menu </span> 
@@ -31,36 +31,38 @@
                   <div class="container_icon">
                      <a><span class="material-symbols-outlined">shopping_cart </span></a>
                      <!-- Contador de productos-->
-                     <div class="count_products"><span class="contador_productos">1</span></div>
+                     <div class="count_products"><span class="contador_productos">0</span></div>
                      <!-- Pop up productos-->
                      <div class="container-cart-products hidden-cart">
-                        <div class="cart-product">
-                           <div class="info-cart-product">
-                              <!-- Imagen-->
-                              <div class="card_imagen_carrito_pop_up">
-                                 <img src="Fotos drones/SWIFT-8H.png" alt="">
-                              </div>
-                              <!-- Cantidad-->
-                              <span class="cantidad-producto-carrito">1</span>
-                              <!-- Texto-->
-                              <div class="contenido-producto-carrito">
-                                 <h3 >SWIFT-8H</h3>
-                                 <p>Con modo plegable.</p>
-                              </div>
-                              <!-- Precio-->
-                              <span class="precio-producto-carrito">180€</span>
+                        <div class="empty_car">
+                              <p class="mns-cesta-vacia">Carrito Vacío</p>
+                        </div>
+                        <div class="row-product">
+                           <div class="cart-product">
+                              <div class="info-cart-product">
+                              
+                                <div class="card_imagen_carrito_pop_up">
+                                    <img src="Fotos drones/SWIFT-8H.png" alt="">
+                                 </div>
+                                 <span class="cantidad-producto-carrito">1</span>
+                                 <div class="contenido-producto-carrito">
+                                    <h3 >SWIFT-8H</h3>
+                                 </div>
+                                 <span class="precio-producto-carrito">180€</span>
+                                 </div>
                               </div>
                            </div>
+                          
                            <!-- Total-->
                            <div class="cart-total">
                               <h3>Total:</h3>
-                              <span class="total-pagar">180€</span>
-                           </div>
-                           <!-- Boton tramitar-->
-                           <div class="btn_carrito">
-                              <a class="carrito" href="carrito\carrito.html">TRAMITAR</a>
+                                 <span class="total-pagar">€0</span>
+                              </div> 
+                              <!-- Boton tramitar-->
+                              <div class="btn_carrito">
+                               <a class="carrito" href="carrito\carrito.html">TRAMITAR</a>  
                            </div>  
-                     </div>
+                        </div>
                      </div>
             </nav>
          <!---- Pop-up carrito-->
@@ -141,6 +143,7 @@
                <div class="card_contenido">
                   <h3>AERO-1X</h3>
                   <p>El AERO-1X es un dron de alta precisión y portátil, ideal para capturar momentos únicos en tus viajes. Su diseño plegable lo hace fácil de transportar y listo para volar en cualquier momento. </p>
+                  <h4>€180</h4>
                </div>
                <!-- botón DETALLE-->
                <div class="btn">
@@ -160,6 +163,7 @@
                <div class="card_contenido">
                   <h3>AERO-4P</h3>
                   <p>El AERO-4P es un dron de alto rendimiento con un diseño aerodinámico, perfecto para volar con precisión en espacios reducidos. Su tamaño compacto lo hace fácil de transportar y listo para la acción </p>
+                  <h4>€240</h4>
                </div>
                <div class="btn">
                   <a href="Detalle/detalle.html">Ver más</a>
@@ -178,6 +182,7 @@
                <div class="card_contenido">
                   <h3>AERO-7W</h3>
                   <p>El AERO-7W es un dron resistente que ofrece una experiencia de vuelo estable y segura, incluso en condiciones climáticas adversas. Su diseño robusto lo hace ideal para aventuras al aire libre.</p>
+                  <h4>€320</h4>
                </div>
                <div class="btn">
                   <a href="Detalle/detalle.html">Ver más</a>
@@ -196,6 +201,7 @@
                <div class="card_contenido">
                   <h3>AERO-10G</h3>
                   <p>El AERO-10G es un dron futurista con tecnología de vanguardia que te lleva a nuevas alturas. Su diseño elegante y su potente motor te brindan una experiencia de vuelo única y emocionante. </p>
+                  <h4>€150</h4>
                </div>
                <div class="btn">
                   <a href="Detalle/detalle.html">Ver más</a>
@@ -214,6 +220,7 @@
                <div class="card_contenido">
                   <h3>AERO-11X</h3>
                   <p>AERO-11X es un dron de última generación con tecnología avanzada y un diseño innovador. Con su alta precisión y rendimiento, podrás disfrutar de una experiencia de vuelo ágil y dinámica en cualquier situación </p>
+                  <h4>€210</h4>
                </div>
                <div class="btn">
                   <a href="Detalle/detalle.html">Ver más</a>
@@ -232,6 +239,7 @@
                <div class="card_contenido">
                   <h3>NIMB-6S</h3>
                   <p>El NIMB-6S es un dron avanzado con un diseño elegante y tecnología de vanguardia, para un vuelo suave y estable. Perfecto para aquellos que buscan calidad y precisión.</p>
+                  <h4>€320</h4>
                </div>
                <div class="btn">
                   <a href="Detalle/detalle.html">Ver más</a>
@@ -250,6 +258,7 @@
                <div class="card_contenido">
                   <h3>SKY-5X</h3>
                   <p>El SKY-5X es un dron de tamaño medio, perfecto para realizar fotografías y videos aéreos de alta calidad. Su fácil manejo y su diseño compacto lo hacen ideal para viajar y llevarlo contigo donde quiera que vayas.</p>
+                  <h4>€190</h4>
                </div>
                <div class="btn">
                   <a href="../Drones proyecto/Detalle/detalle.html">Ver más</a>
@@ -268,6 +277,7 @@
                <div class="card_contenido">
                   <h3>SKY-9S</h3>
                   <p>El SKY-9S es un dron fácil de usar y llevar, ideal para aquellos que buscan una experiencia de vuelo sencilla. Su diseño intuitivo y estable te permite disfrutar al máximo. </p>
+                  <h4>€140</h4>
                </div>
                <div class="btn">
                   <a href="Detalle/detalle.html">Ver más</a>
@@ -286,6 +296,7 @@
                <div class="card_contenido">
                   <h3>SKYV-2T</h3>
                   <p>El SKY-2VT es un dron compacto y fácil de transportar con un diseño plegable. Perfecto para capturar vistas impresionantes desde el aire.</p>
+                  <h4>€280</h4>
                </div>
                <div class="btn">
                   <a href="Detalle/detalle.html">Ver más</a>
@@ -304,6 +315,7 @@
                <div class="card_contenido">
                   <h3>SWIFT-8H</h3>
                   <p>El SWIFT-8H es un dron ágil y rápido, diseñado para maniobras impresionantes y una experiencia emocionante de vuelo. Su diseño aerodinámico te permite volar con confianza. </p>
+                  <h4>€300</h4>
                </div>
                <div class="btn">
                   <a href="Detalle/detalle.html">Ver más</a>
@@ -322,6 +334,7 @@
                <div class="card_contenido">
                   <h3>WING-3S</h3>
                   <p>El WING-3S es un dron de ala fija, ideal para aquellos que buscan una experiencia de vuelo diferente y emocionante </p>
+                  <h4>€230</h4>
                </div>
                <div class="btn">
                   <a href="Detalle/detalle.html">Ver más</a>
@@ -339,6 +352,10 @@
 <!--FOOTER -->
    <!-- Sección 1: LOGO -->
       <footer class="footer-container" id="footer">
+         <div class="boton_footer">
+            <a href="#header"><span  class="material-symbols-outlined boton_arriba" > arrow_upward</span>
+            <p> Volver arriba</p></a>
+         </div>
          <div class="nombre-web">
             <img class="logo1" src="Fotos/logo_dron.png" alt="">
             <img class="logo2" src="Fotos/logo_marca.png" alt="">

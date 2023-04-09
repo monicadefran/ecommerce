@@ -152,7 +152,7 @@ disposicion de los elementos
    background-color: rgb(241 241 241);
    width: 500px;
    z-index: 1;
-   min-height: 40vh;
+   /*min-height: 40vh;*/
    border-radius: 10px;
    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
    Font-family: 'Fira Code', monospace;
@@ -161,7 +161,7 @@ disposicion de los elementos
    font-weight: 400;
    font-size: 20px;
    display: inline-block;
-   margin: 19px auto;
+   margin: 32px auto;
 }
 
 .cart-product{
@@ -176,7 +176,7 @@ disposicion de los elementos
 
 .contenido-producto-carrito{
    display: inline-block;
-   margin: 15px auto;
+   margin: 32px auto;
    
 }
 .contenido-producto-carrito h3{
@@ -187,7 +187,7 @@ disposicion de los elementos
    font-size: 20px;
    margin-left: 10px;
    display: inline-block;
-   margin: 19px auto;
+   margin: 32px auto;
 }
 .cart-total{
    display: flex;
@@ -205,6 +205,13 @@ disposicion de los elementos
    font-size: 20px;
    font-weight: 900;
 }
+
+.mns-cesta-vacia {
+   font-size: 20px;
+   margin-top: 30px;
+    margin-left: 30px;
+}
+
 .btn_carrito{
    margin: 10px;
    height: 40px;
@@ -222,6 +229,10 @@ disposicion de los elementos
 }
 .carrito {
    padding: 30px;
+}
+
+.empty_car{
+   display: none;
 }
 
 
@@ -364,7 +375,7 @@ input[type=checkbox]{
    "imagen"
    "contenido"
    "boton"
-   "boton2";;
+   "boton2";
    background-color: #fff;
    border: 1px solid #ccc;
    border-radius: 5px;
@@ -425,11 +436,11 @@ font-weight: 600;
 .btn_add_producto button {
    background-color: black;
    color: #fff;
-   /*max-width: 105px;*/
    font-weight: 600;
    padding: 5px;
    border-radius: 10px;
    border-color: black;
+   cursor: pointer;
 }
 
 /******** FOOTER **********/
@@ -438,7 +449,8 @@ font-weight: 600;
 .footer-container {
    grid-area: footer;
    display: grid;
-   grid-template-areas: 
+   grid-template-areas:
+   "boton_arriba boton_arriba boton_arriba" 
    "nombre-web nombre-web nombre-web"
    "contacto horario informacion"
    "ayuda ayuda redes-sociales"
@@ -455,6 +467,24 @@ font-weight: 600;
   
   
  }
+
+ .boton_footer{
+   grid-area: boton_arriba;
+}
+
+ .boton_arriba{
+   color: black;
+   font-size: 40px;
+   border: solid;
+   border-radius: 50%;
+ }
+
+
+ .boton_footer a:link, a:visited, a:active {
+   text-decoration:none;
+   color: black;
+}
+
  .nombre-web {
   grid-area: nombre-web;
   display: flex;
