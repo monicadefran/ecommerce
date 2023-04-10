@@ -211,7 +211,6 @@ const showHTML = () => {
          <span class="cantidad-producto-carrito"> ${product.quantity} </span>
          <div class="contenido-producto-carrito">
             <h3 > ${product.title} </h3>
-            <p> Con modo plegable. </p>
          </div>
          <span class="precio-producto-carrito"> ${product.price}</span>
          <span class="material-symbols-outlined cerrar-producto">close</span>
