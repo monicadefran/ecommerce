@@ -29,11 +29,11 @@
                   <a><span class="material-symbols-outlined"> account_circle </span></a>
                   <!-- Icono Carrito-->
                   <div class="container_icon">
-                     <a><span class="material-symbols-outlined">shopping_cart </span></a>
+                     <a class="shopping_cart"><span class="material-symbols-outlined">shopping_cart </span></a>
                      <!-- Contador de productos-->
                      <div class="count_products"><span class="contador_productos">0</span></div>
                      <!-- Pop up productos-->
-                     <div class="container-cart-products">
+                     <div class="container-cart-products hidden-cart">
                         <div class="empty_car">
                               <p class="mns-cesta-vacia">Carrito Vacío</p>
                         </div>
@@ -84,272 +84,30 @@
             
          </div>
 
-         <!-- Filtro(No se le puede añadir animaciones mejor ccs)-->
-            
-            <!-- Botón para abrir el popup -->
-            <label for="popup-toggle" class="filtro-btn">FILTROS</label>
-            
-            <!-- Checkbox que controla la visibilidad del popup -->
-            <input type="checkbox" id="popup-toggle" style="display: none;">
-            
-            <!-- Popup -->
-            <div class="modal">
-               <div class="modal-content">
-                  <label for="popup-toggle" class="close">&times;</label>
-                  <h2>FILTROS</h2>
-                  <hr>
-                  <div class="estructura">
-                        <h3>Estructura</h3>
-                        <input type="checkbox" id="checkbox1">
-                        <label for="checkbox1">ALA FIJA</label>
-                        <input type="checkbox" id="checkbox2">
-                        <label for="checkbox2">ALA ROTATORIA</label>
-                  </div>
-                  <hr>
-                  <div class="Nº_Helices">
-                        <h3>Nº HELICES</h3>
-                        <input type="checkbox" id="checkbox3">
-                        <label for="checkbox3">TRICOPTEROS</label>
-                        <input type="checkbox" id="checkbox4">
-                        <label for="checkbox4">CUDRICOPTEROS</label>
-                        <br>
-                        <input type="checkbox" id="checkbox5">
-                        <label for="checkbox5">HEXACOPTEROS </label>
-                        <input type="checkbox" id="checkbox6">
-                        <label for="checkbox5">OCTACOPTEROS</label>
-                  </div>
-                  <hr>
-                  <div class="Tipo_de_uso">
-                        <h3>TIPO DE USO</h3>
-                        <input type="checkbox" id="checkbox7">
-                        <label for="checkbox8">Profesional</label>
-                        <input type="checkbox" id="checkbox8">
-                        <label for="checkbox8">Semiprofesional</label><br>
-                        <input type="checkbox" id="checkbox9">
-                        <label for="checkbox9">recreativo</label>
-                  </div>
-                  <button class="boton_restart">Restart</button>
-               <button class="boton_buscar">Buscar</button>
-               </div>
+         <!-- FILTRO -->
+         <div class="filtro">
+            <div id="filter-button">
+               <button id="show-all-btn" class="btnf show-all-btn">Show All</button>
+               <button class="btnf">Profesional</button>
+               <button class="btnf">Semiprofesional</button>
+               <button class="btnf">Recreativo</button>
             </div>
+            <div id="filter-button2">
+               <button class="btnf2 sort-btn" data-sort="asc">Ascendente</button>
+               <button class="btnf2 sort-btn" data-sort="des">Descendente</button>
+            </div>
+         </div>
+            
+
 
          <!-- CONTENEDOR PRODUCTOS -->
-         <section class="card_container">
-            <!-- CARTA 1 -->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/AERO-1X.png" alt>
-               </div>
-               <div class="card_contenido">
-                  <h3>AERO-1X</h3>
-                  <p>El AERO-1X es un dron de alta precisión y portátil, ideal para capturar momentos únicos en tus viajes. Su diseño plegable lo hace fácil de transportar y listo para volar en cualquier momento. </p>
-                  <h4>€180</h4>
-               </div>
-               <!-- botón DETALLE-->
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 2-->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/AERO-4P.jpg" alt="">
-               </div>
-               <div class="card_contenido">
-                  <h3>AERO-4P</h3>
-                  <p>El AERO-4P es un dron de alto rendimiento con un diseño aerodinámico, perfecto para volar con precisión en espacios reducidos. Su tamaño compacto lo hace fácil de transportar y listo para la acción </p>
-                  <h4>€240</h4>
-               </div>
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 3 -->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/AERO-7W.jpg" alt="">
-               </div>
-               <div class="card_contenido">
-                  <h3>AERO-7W</h3>
-                  <p>El AERO-7W es un dron resistente que ofrece una experiencia de vuelo estable y segura, incluso en condiciones climáticas adversas. Su diseño robusto lo hace ideal para aventuras al aire libre.</p>
-                  <h4>€320</h4>
-               </div>
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 4 -->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/AERO-10G.png" alt>
-               </div>
-               <div class="card_contenido">
-                  <h3>AERO-10G</h3>
-                  <p>El AERO-10G es un dron futurista con tecnología de vanguardia que te lleva a nuevas alturas. Su diseño elegante y su potente motor te brindan una experiencia de vuelo única y emocionante. </p>
-                  <h4>€150</h4>
-               </div>
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 5-->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/AERO-11X.png" alt="">
-               </div>
-               <div class="card_contenido">
-                  <h3>AERO-11X</h3>
-                  <p>AERO-11X es un dron de última generación con tecnología avanzada y un diseño innovador. Con su alta precisión y rendimiento, podrás disfrutar de una experiencia de vuelo ágil y dinámica en cualquier situación </p>
-                  <h4>€210</h4>
-               </div>
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 6-->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/NIMB-6S.png" alt="">
-               </div>
-               <div class="card_contenido">
-                  <h3>NIMB-6S</h3>
-                  <p>El NIMB-6S es un dron avanzado con un diseño elegante y tecnología de vanguardia, para un vuelo suave y estable. Perfecto para aquellos que buscan calidad y precisión.</p>
-                  <h4>€320</h4>
-               </div>
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 7 -->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/SKY-5X.png" alt>
-               </div>
-               <div class="card_contenido">
-                  <h3>SKY-5X</h3>
-                  <p>El SKY-5X es un dron de tamaño medio, perfecto para realizar fotografías y videos aéreos de alta calidad. Su fácil manejo y su diseño compacto lo hacen ideal para viajar y llevarlo contigo donde quiera que vayas.</p>
-                  <h4>€190</h4>
-               </div>
-               <div class="btn">
-                  <a href="../Drones proyecto/Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 8-->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/SKY-9S.png" alt="">
-               </div>
-               <div class="card_contenido">
-                  <h3>SKY-9S</h3>
-                  <p>El SKY-9S es un dron fácil de usar y llevar, ideal para aquellos que buscan una experiencia de vuelo sencilla. Su diseño intuitivo y estable te permite disfrutar al máximo. </p>
-                  <h4>€140</h4>
-               </div>
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 9-->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/SKYV-2T.jpg" alt="">
-               </div>
-               <div class="card_contenido">
-                  <h3>SKYV-2T</h3>
-                  <p>El SKY-2VT es un dron compacto y fácil de transportar con un diseño plegable. Perfecto para capturar vistas impresionantes desde el aire.</p>
-                  <h4>€280</h4>
-               </div>
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 10 -->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/SWIFT-8H.png" alt>
-               </div>
-               <div class="card_contenido">
-                  <h3>SWIFT-8H</h3>
-                  <p>El SWIFT-8H es un dron ágil y rápido, diseñado para maniobras impresionantes y una experiencia emocionante de vuelo. Su diseño aerodinámico te permite volar con confianza. </p>
-                  <h4>€300</h4>
-               </div>
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
-            <!-- CARTA 11-->
-            <div class="card">
-               <div class="card_imagen">
-                  <img src="Fotos drones/AERO-11X.png" alt="">
-               </div>
-               <div class="card_contenido">
-                  <h3>WING-3S</h3>
-                  <p>El WING-3S es un dron de ala fija, ideal para aquellos que buscan una experiencia de vuelo diferente y emocionante </p>
-                  <h4>€230</h4>
-               </div>
-               <div class="btn">
-                  <a href="Detalle/detalle.html">Ver más</a>
-               </div>
-               <!-- botón AÑADIR PRODUCTO-->
-               <div class="btn_add_producto">
-                  <button class="btn-add-cart">Añadir a Carrito</button>
-               </div>
-            </div>
-            <!-- FIN de CARTA-->
+         <section class="card_container products" id="product-section">
+           
          </section>
          
 
 
-<!--FOOTER -->
+   <!--FOOTER -->
    <!-- Sección 1: LOGO -->
       <footer class="footer-container" id="footer">
          <div class="boton_footer">
@@ -412,6 +170,8 @@
 
    </footer>
    </main>
-      <script type = "text/javascript" src="index.js"></script> 
+      <script type = "text/javascript" src="./js/productos.js"></script> 
+      <script type = "text/javascript" src="./js/app.js"></script> 
+      <script type = "text/javascript" src="./js/index.js"></script> 
    </body>
 </html>

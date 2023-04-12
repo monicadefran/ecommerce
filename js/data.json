@@ -1,0 +1,91 @@
+[
+   {
+      "id":"producto-1",
+      "nombre": "AERO-1X",
+      "precio":180,
+      "img": "Fotos drones/AERO-1X.png",
+      "tipo": "dron Profesional",
+      "descripcion": "El AERO-1X es un dron de alta precisión y portátil, ideal para capturar momentos únicos en tus viajes. Su diseño plegable lo hace fácil de transportar y listo para volar en cualquier momento."
+   },
+   {
+      "id":"producto-2",
+      "nombre": "AERO-4P",
+      "precio":240,
+      "img": "Fotos drones/AERO-4P.jpg",
+      "tipo": "dron Semiprofesional",
+      "descripcion": "El AERO-4P es un dron de alto rendimiento con un diseño aerodinámico, perfecto para volar con precisión en espacios reducidos. Su tamaño compacto lo hace fácil de transportar y listo para la acción"
+   },
+   {
+      "id":"producto-3",
+      "nombre": "AERO-7W",
+      "precio":1300,
+      "img": "Fotos drones/AERO-7W.jpg",
+      "tipo": "dron Profesional",
+      "descripcion": "El AERO-7W es un dron resistente que ofrece una experiencia de vuelo estable y segura, incluso en condiciones climáticas adversas. Su diseño robusto lo hace ideal para aventuras al aire libre e indoor."
+   },
+   {
+      "id":"producto-4",
+      "nombre": "AERO-10G",
+      "precio":720,
+      "img": "Fotos drones/AERO-10G.png",
+      "tipo": "dron Semiprofesional",
+      "descripcion": "El AERO-10G es un dron futurista con tecnología de vanguardia que te lleva a nuevas alturas. Su diseño elegante y su potente motor te brindan una experiencia de vuelo única y emocionante."
+   },
+   {
+      "id":"producto-5",
+      "nombre": "AERO-11X",
+      "precio":2500,
+      "img": "Fotos drones/AERO-11X.png",
+      "tipo": "dron Profesional",
+      "descripcion": "AERO-11X es un dron de última generación con tecnología avanzada y un diseño innovador. Con su alta precisión y rendimiento, podrás disfrutar de una experiencia de vuelo ágil. "
+   },
+   {
+      "id":"producto-6",
+      "nombre": "NIMB-6S",
+      "precio":1799,
+      "img": "Fotos drones/NIMB-6S.png",
+      "tipo": "dron Semiprofesional",
+      "descripcion": "El NIMB-6S es un dron avanzado con un diseño elegante y tecnología de vanguardia, para un vuelo suave y estable. Perfecto para aquellos que buscan calidad y precisión en cualquier situación."
+   },
+   {
+      "id":"producto-7",
+      "nombre": "SKY-5X",
+      "precio":1870,
+      "img": "Fotos drones/SKY-5X.png",
+      "tipo": "dron Semiprofesional",
+      "descripcion": "El SKY-5X es un dron de tamaño medio, perfecto para realizar fotografías y videos aéreos de alta calidad. Su fácil manejo y su diseño compacto lo hacen ideal para viajar y llevarlo contigo."
+   },
+   {
+      "id":"producto-8",
+      "nombre": "SKY-9S",
+      "precio":449,
+      "img": "Fotos drones/SKY-9S.png",
+      "tipo": "dron Recreativo",
+      "descripcion": "El SKY-9S es un dron fácil de usar y llevar, ideal para aquellos que buscan una experiencia de vuelo sencilla. Su diseño intuitivo y estable te permite disfrutar al máximo."
+   },
+   {
+      "id":"producto-9",
+      "nombre": "SKYV-2T",
+      "precio":280,
+      "img": "Fotos drones/SKYV-2T.jpg",
+      "tipo": "dron Recreativo",
+      "descripcion": "El SKY-2VT es un dron compacto y fácil de transportar con un diseño plegable. Perfecto para capturar vistas impresionantes desde el aire donde quiera que vayas."
+   },
+   {
+      "id":"producto-10",
+      "nombre": "SWIFT-8H",
+      "precio":159,
+      "img": "Fotos drones/SWIFT-8H.png",
+      "tipo": "dron Recreativo",
+      "descripcion": "El SWIFT-8H es un dron ágil y rápido, diseñado para maniobras impresionantes y una experiencia emocionante de vuelo. Su diseño aerodinámico te permite volar con confianza."
+   },
+   {
+      "id":"producto-11",
+      "nombre": "WING-3S",
+      "precio":780,
+      "img": "Fotos drones/AERO-11X.png",
+      "tipo": "dron Recreativo",
+      "descripcion": "El WING-3S es un dron de ala fija, ideal para aquellos que buscan una experiencia de vuelo diferente y emocionante. Fácil de transportar y listo para volar en cualquier momento."
+   }
+
+]

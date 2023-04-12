@@ -1,20 +1,11 @@
 
-// Funcion para mostrar el menú hamburgesa
-function openNav(){
-   document.getElementById('sidenav').style.display = 'block';
-   document.getElementById('sidenav').style.width = '50%';
-}
-
-// Funcion para cerrar el menú hamburgesa
-function closeNav(){
-   document.getElementById('sidenav').style.width = '0%';
-}
-
 //1-mostrar y ocultar carrito
 //Variable donde se hara click para mostrar u ocultar el carrito
-const btnCart = document.querySelector('.container_icon');
+const btnCart = document.querySelector('.shopping_cart');
 //Div Contenedor del carrito que mostraremos y ocultaremos
 const containerCartProductos = document.querySelector('.container-cart-products');
+
+const cerrarProducto = document.querySelector('.cerrar-producto')
 
 //Añadimos evento listener al boton cart que ejecutara 
 //una funcion cuando se haga click sobre el 
@@ -24,9 +15,10 @@ btnCart.addEventListener('click', () => {
     //.classList.toggle y activamos el interruptor
     //en nuestra doble clase previamente asignada con 
     //el display none en este caso Hidden-cart
-    containerCartProductos.classList.toggle('hidden-cart');
-
+   containerCartProductos.classList.toggle('hidden-cart');
+      
 })
+
 
 /* =======================  CARRITO   =========================== */
 
@@ -43,8 +35,8 @@ const productList = document.querySelector ('.card_container');
 const empty_car = document.querySelector('.empty_car');
 
 
-//variable de array de productos añadidos al carrito
-let allProducts = [];
+//variable de array de productos añadidos al carrito y tambien lo que tenemos en el localStorage
+let allProducts = JSON.parse(localStorage.getItem("carrito"))||[];
 
 //variable que trae el total a pagar de nuestro carrito
 const valorTotal = document.querySelector ('.total-pagar');
@@ -87,6 +79,7 @@ productList.addEventListener ('click', e => {
          price: parentProduct.querySelector('h4').textContent,
          imagen: img,
 
+
       }
 
       //cuidado con el simbolo del euro para luego poder operar 
@@ -118,10 +111,12 @@ productList.addEventListener ('click', e => {
          allProducts = [...allProducts, infoProduct]
       }
 
-      showHTML ()
+      showHTML ();
       //añadimos el html llamando a la funcion ShowHtml
       //comprobamos que nos esta agregando productos al array de productos
       console.log(allProducts);
+      savelocal();
+      
 
        
       // -----Sacar Src Img para mostrarla en el carrito----- 
@@ -145,17 +140,19 @@ rowProduct.addEventListener ('click',(e)=> {
       //aplicamos .trim() para ocultar espacios en caso de que existan
       //si tenemos espacios no nos podra  comparar correctamente en la funcion.filters
       const n_product = product.querySelector('h3').textContent.trim();
-      console.log(n_product);
-      console.log(n_product.length);
+      
 
 
       //buscamos en el array el elemento con titulo igual y lo eliminamos de la lista de articulos del carrito
       //lo suyo es que cada  elementos tuviesen un ID unico
       allProducts = allProducts.filter (
          product => product.title !== n_product);
-      
-         
+
          showHTML();
+         savelocal();
+         
+        //containerCartProductos.style.display = 'block'; 
+         
          console.log (allProducts);
          //llamamos a la funcion showHTML para que vuelva a actualizar los elementos del carrito quitando
         //el articulo que acabamos de eliminar 
@@ -163,6 +160,8 @@ rowProduct.addEventListener ('click',(e)=> {
    }
 
 });
+
+
 
 //Funcion para añadir html a nuestro carrito con productos nuevos 
 const showHTML = () => {
@@ -172,6 +171,7 @@ const showHTML = () => {
 
     if(allProducts.length==0){
          empty_car.style.display = 'block';
+         
       }else{
          empty_car.style.display = 'none';
       }
@@ -186,6 +186,7 @@ const showHTML = () => {
 
    //limpiamos el html contenido en rowproduct
    rowProduct.innerHTML = ``;
+   
 
    //recorremos el array de productos con el metodo foreach
    allProducts.forEach (product => {
@@ -208,7 +209,9 @@ const showHTML = () => {
          <div class="card_imagen_carrito_pop_up">
             <img src="${product.imagen}" alt="">
          </div>
+         <button class="boton-menos"><span class="material-symbols-outlined">remove</span></button>
          <span class="cantidad-producto-carrito"> ${product.quantity} </span>
+         <button class="boton-mas"><span class="material-symbols-outlined">add</span></button>
          <div class="contenido-producto-carrito">
             <h3 > ${product.title} </h3>
          </div>
@@ -222,6 +225,33 @@ const showHTML = () => {
       //para añadirlo usamos rowproduct(que es el contenedor de productos previamente creado
       // en el html  y almacenado en el js )
      rowProduct.append(containerProduct);
+
+     // Creamos una varaible para poder restar y crear de nuevo el contnido. El boton solo restara
+     //Cuando sea mayor que 1, que la minima cantidad en el carrito
+
+     let restar = containerProduct.querySelector('.boton-menos');
+
+     restar.addEventListener('click', ()=>{
+      if (product.quantity !== 1){
+         product.quantity--;
+      }
+      // Tenemos que volver a cragra os productos
+      showHTML();
+      // Lo guardamos en local
+      savelocal();
+     })
+
+     //Creamos una varaible para poder sumar la cantidad
+     let sumar = containerProduct.querySelector('.boton-mas');
+
+     sumar.addEventListener ('click', ()=>{
+      product.quantity++;
+      savelocal();
+      // Tenemos que volver a cragra os productos
+      showHTML();
+      // Lo guardamos en local
+      
+     })
 
     
      total = total + parseInt(product.quantity * product.price.slice(1));
@@ -240,3 +270,15 @@ const showHTML = () => {
 //llamamos para que nos ordene la primera vez que entramos en la web el carrito
 showHTML();
 
+
+// TRabajamos con local storage para guardar en el mavegador los elemntos
+// selecionados y para ello primero hacemos una constante donde guardamos los elemntos
+
+//set item
+const savelocal = () => {
+   localStorage.setItem("carrito", JSON.stringify (allProducts))
+};
+
+//get item
+
+JSON.parse(localStorage.getItem("carrito"));
