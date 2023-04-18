@@ -9,18 +9,19 @@
  
     Se ha organizado la home haciendo uso de grid y de grid-area. Cada elemnto lo hemos organizado con otro grid y flex-box, 
     lo que nos ha permitido poder cambiarlo y hacerlo resposive. Cada detalle de producto es resposive y lleva incuido una galería de imagenes.
-    Hemos diseñado un carrito que es funcional. Así como un menú hamburgesa que es practicamente funcional.
+    Diseño de un ecommers con .json y fech, simulando una llamada a una appi externa que nos carga los productos. Diseño de un carrito al que le añadimos productos, le quitamos productos, variando las cantidades que es funcional y se guarda en Local Storage. La tramitación del producto se realiza desde la pagina web carrito. 
            
   # Arquitectura del Código. 
       A continuación se explica la estructura de carpetas y que archivos son relenvantes 
       y su ubicación. 
-      - *Carrito* : Justificación de la carpeta. 
-      - *Detalle* : Justificación de la carpeta. 
-      - *Fotos* : Justificación de la carpeta. 
-      - *Fotos drones* : Justificación de la carpeta. 
-      - *index.html*: Justificación del archivo. 
-      - *index.css*: Justificación del archivo. 
-      - *index.js*: Justificación del archivo.
+      - *Carrito* : Donde se ecnuentran los archivos relaccionados con la web de compra. 
+      - *Detalle* : Archivos en los que encontramos los detalles de los productos.
+      - *Fotos* : Fotos de los productos.
+      - *Fotos drones* : Fotos de los Drones.
+      - *js* : Donde se encuentra el archivos .js del proyecto. Entre ellos data.json.
+      - *index.html*: Welcom page del proyecto. 
+      - *index.css*: Hoja de estilos del proyecto. 
+  
         
     # Reglas de documentación: 
        A continuación se presentan las reglas de documentación. 
