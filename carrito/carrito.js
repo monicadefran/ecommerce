@@ -47,7 +47,7 @@ const empty_car = document.querySelector('.empty_car');
 let allProducts = JSON.parse(localStorage.getItem("carrito"))||[];
 
 
-//variable que trae el total a pagar de nuestro carrito
+//variable que trae el total a pagar de nuestro carrito del pop-up y en la pagina pagar.
 const valorTotal = document.querySelector ('.total-pagar');
 const valorTotal2 = document.querySelector ('.total-pagar2');
 
@@ -261,7 +261,7 @@ const showHTMLCarrito = () => {
             </div>
             <div class="botones_producto_carrito">
                <button class="listaBotonMenos"><span class="material-symbols-outlined">remove</span></button>
-               <span class="cantidad-producto-carrito"> ${productoSelccionado.quantity} </span>
+               <span class="cantidad-producto-carrito2"> ${productoSelccionado.quantity} </span>
                <button class="listaBotonMas"><span class="material-symbols-outlined">add</span></button>
             </div>
             <div class="precio_producto_carrito">
@@ -272,7 +272,7 @@ const showHTMLCarrito = () => {
             carritoProducts.append(contenedorCarrito);
 
             let restar = carritoProducts.querySelector('.listaBotonMenos');
-            let cantidad_producto = carritoProducts.querySelector('.cantidad-producto-carrito');
+            let cantidad_producto = carritoProducts.querySelector('.cantidad-producto-carrito2');
 
             restar.addEventListener('click', ()=>{
                if (productoSelccionado.quantity !== 1){
@@ -302,9 +302,39 @@ const showHTMLCarrito = () => {
             
         });
         valorTotal2.textContent = `${total}`;
+        countProducts.innerText = `${productoSelccionado.quantity}`;
         console.log(total);
         
     });
 
 };
-showHTMLCarrito ();
+showHTMLCarrito ()
+
+// Funcion para confirmar la tramitación de la compra
+
+function confirmar (){
+   let userval = confirm ("¿Estás seguro de finalizar la compra?");
+   if (userval=== true){
+      console.log("Tu compra se ha realizado con exito");
+      showHTMLCompraRealizada ();
+   } else {
+      console.log("Se ah produccido un fallo. ¿Te gustaría recuperar tu compra?");
+      showHTMLCompraNORealizada ();
+   }
+};
+
+const showHTMLCompraRealizada = () => {
+   let carritoVacio = document.querySelector(".carrito")
+   carritoVacio.innerHTML = `
+   <h3>Su compra se ha realizado con exito. Muchas gracias por utilizar nuetra web.</h3>
+   `;
+   // Tendríamos que vaciar el carrito
+}
+
+const showHTMLCompraNORealizada = () => {
+   let carritoVacio = document.querySelector(".carrito")
+   carritoVacio.innerHTML = `
+   <h3>Lo sentimos mucho, se ha produccido un fallo. ¿Te gustaría recuperar tu compra?</h3>
+   `;
+   // Tendríamos que vaciar el carrito
+}
