@@ -12,114 +12,103 @@
 
 <body>
 
-    <!-- CONTENEDOR GENERAL -->
+<!-- CONTENEDOR GENERAL -->
+<main class="container">
+  <!-- HEADER -->
+  <section class="header" id="header">
+  <!-- BOTON HAMBURGESA -->
+     <div class ="btn_hamburgesa">
+        <span class="material-symbols-outlined" onclick="openNav()" > menu </span> 
+     </div> 
 
-    <main class="container">
-
-        <!-- HEADER -->
-
-        <section class="header">
-
-            <!-- MENU HAMBURGUESA -->
-
-            <div class ="btn_hamburgesa">
-                <span class="material-symbols-outlined" onclick="openNav()" > menu </span> 
-            </div>
-
-            <!-- CONTENEDOR DEL LOGO -->
-
-            <div class="logo">
-                <img class="logo1" src="../Fotos/logo_dron.png" alt="">
-                <img class="logo2" src="../Fotos/logo_marca.png" alt="">
-            </div>
-
-            <!-- NAVEGADOR MOBIL -->
-
-            <nav class="nav">
-                <a><span class="material-symbols-outlined"> search </span></a>
-                <a><span class="material-symbols-outlined"> account_circle </span></a>
-
-                <!-- Icono Carrito-->
-
-                <div class="container_icon"></div>
-                <a><span class="material-symbols-outlined">shopping_cart </span></a>
-            </nav>
-
-        </section>
-
-        <!-- responsive side nav-->
-
-         <div class="sideNav" id="sidenav">
-            <a href="#" class="closeBtn" onclick="closeNav()">&#10006;</a>
-            <a href="../index.html">Inicio</a>
-            <a href="#">Perfil</a>
-            <a href="#">Buscar</a>
-            <a href="carrito/carrito.html">Carrito</a>
-            <a href="#footer" onclick="closeNav()">Contacto</a>
-         </div>
+     <!-- CONTENEDOR DEL LOGO -->
+     <div class="logo"> 
+        <img class="logo1" src="../Fotos/logo_dron.png" alt="">
+        <img class="logo2" src="../Fotos/logo_marca.png" alt="">
+     </div>
+     <!-- BOTONES NAVEGADOR -->
+     <nav class="nav">
+           <a><span class="material-symbols-outlined"> search </span></a>
+           <a><span class="material-symbols-outlined"> account_circle </span></a>
+           <!-- Icono Carrito-->
+           <div class="container_icon">
+              <a class="shopping_cart"><span class="material-symbols-outlined">shopping_cart </span></a>
+              <!-- Contador de productos-->
+              <div class="count_products"><span class="contador_productos">0</span></div>
+              <!-- Pop up productos-->
+              <div class="container-cart-products hidden-cart">
+                 <div class="empty_car">
+                       <p class="mns-cesta-vacia">Carrito Vacío</p>
+                 </div>
+                 <div class="row-product">
+                    <div class="cart-product">
+                       <div class="info-cart-product">
+                       
+                         <div class="card_imagen_carrito_pop_up">
+                             <img src="Fotos drones/SWIFT-8H.png" alt="">
+                          </div>
+                          <span class="cantidad-producto-carrito">1</span>
+                          <div class="contenido-producto-carrito">
+                             <h3 >SWIFT-8H</h3>
+                          </div>
+                          <span class="precio-producto-carrito">180€</span>
+                          </div>
+                       </div>
+                    </div>
+                   
+                    <!-- Total-->
+                    <div class="cart-total">
+                       <h3>Total:</h3>
+                          <span class="total-pagar">€0</span>
+                       </div> 
+                       <!-- Boton tramitar-->
+                       <div class="btn_carrito">
+                        <a class="btn_tramitar" href="">TRAMITAR</a>  
+                    </div>  
+                 </div>
+              </div>
+     </nav>
+  <!---- Pop-up carrito-->
+  
+  </section>
+  <!-- responsive side nav-->
+  <div class="sideNav" id="sidenav">
+     <a href="#" class="closeBtn" onclick="closeNav()">&#10006;</a>
+     <a href="../index.html">Inicio</a>
+     <a href="#">Perfil</a>
+     <a href="#">Buscar</a>
+     <a href="carrito.html">Carrito</a>
+     <a href="#footer" onclick="closeNav()">Contacto</a>
+  </div>
         <!-- CARRITO DE COMPRA -->
-        
+
         <section class="carrito">
 
             <div class="titulo">
-                <h2>Carrito de compra</h2>
+               <h2>Carrito de compra</h2>
             </div>
-
             <div class="encabezado">
-                <span></span>
-                <p>Producto</p>
-                <p>Cantidad</p>
-                <p>Precio</p>
-                <p>Total</p>
-              </div>
-
-            <div class="producto-1">
-                <div class="papelera"><span class="material-symbols-outlined">delete</span></div>
-                <div class="contenedor-producto">                
-                <div class="imagen"><img src="../Fotos drones/SWIFT-8H.png" alt></div>
-                <div class="nombre">SWIFT-8H</div>
+               <p>Producto</p>
+               <p>Cantidad</p>
+               <p>Precio</p>
+            </div>
+            <div class="card_carrito">
+               <div class="carritoProduct">
+               </div>
+           
+            <!-- Total-->
+            <div class="cart-total">
+               <h3>Total:</h3>
+                  <span class="total-pagar2">€0</span>
+               </div> 
+         
+             
             </div>
 
-                <div class="cantidad">
-                    <button class="boton-menos"><span class="material-symbols-outlined">remove</span></button>
-                    <span class="cantidad-numero" id="cantidad-producto-1">1</span>
-                    <button class="boton-mas"><span class="material-symbols-outlined">add</span></button>
-                </div>
-
-                <div class="precio" id="precio-producto-1">100€</div>
-                <div class="total" id="total-producto-1">100€</div>
-            </div>
-
-            <div class="producto-2">
-                <div class="papelera"><span class="material-symbols-outlined">delete</span></div>
-                <div class="contenedor-producto">                
-                <div class="imagen"><img src="../Fotos drones/AERO-1X.png" alt></div>
-                <div class="nombre">AERO-1X</div>
-            </div>
-
-                <div class="cantidad">
-                    <button class="boton-menos"><span class="material-symbols-outlined">remove</span></button>
-                    <span class="cantidad-numero" id="cantidad-producto-2">2</span>
-                    <button class="boton-mas"><span class="material-symbols-outlined">add</span></button>
-                </div>
-
-                <div class="precio" id="precio-producto-2">150€</div>
-                <div class="total" id="total-producto-2">300€</div>
-            </div>
-
-            <div class="actualizar">
-                <button class="boton-actualizar">Actualizar carrito</button>
-            </div>
-
-            <div class="total-carrito">
-              <p>Total del carrito: <span id="total-carrito">400€</span></p>
-            </div>
-
-            <div class="pagar">
-                <button class="boton-pagar">Pagar</button>
-            </div>
-
+       
         </section>
+
+
 
 
       <!--  NUEVO-FOOTER -->
@@ -127,6 +116,10 @@
       <!-- Sección 1: LOGO -->
   
       <footer class="footer-container" id="footer">
+        <div class="boton_footer">
+          <a href="#header"><span  class="material-symbols-outlined boton_arriba" > arrow_upward</span>
+          <p> Volver arriba</p></a>
+       </div>
          <div class="nombre-web">
             <img class="logo1" src="../Fotos/logo_dron.png" alt="">
             <img class="logo2" src="../Fotos/logo_marca.png" alt="">

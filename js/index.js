@@ -258,13 +258,18 @@ const showHTML = () => {
 
      totalOfProducts = totalOfProducts + product.quantity;
 
+     const saveLocalTotal = () => {
+      localStorage.setItem("precioTotal", JSON.stringify (total));
+
+     }
+     saveLocalTotal ();
+
    });
 
    //modificamos el valor del total a pagar con la suma del coste total de los
     //añadidos al carrito  y el numero total de articulos
    valorTotal.innerText = `${total}`;
    countProducts.innerText = totalOfProducts;
-   
 };
 
 //llamamos para que nos ordene la primera vez que entramos en la web el carrito

@@ -5,85 +5,306 @@ function openNav(){
  function closeNav(){
     document.getElementById('sidenav').style.width = '0%';
  }
- 
- const btnCart = document.querySelector('.container_icon');
- const containerCartProductos = document.querySelector('.container-cart-products');
- 
- btnCart.addEventListener('click', () => {
-     containerCartProductos.classList.toggle('hidden-cart');
- 
- })
 
 
- /*CARRITO SUMAR Y RESTAR*/
+//1-mostrar y ocultar carrito
+//Variable donde se hara click para mostrar u ocultar el carrito
+const btnCart = document.querySelector('.shopping_cart');
+//Div Contenedor del carrito que mostraremos y ocultaremos
+const containerCartProductos = document.querySelector('.container-cart-products');
 
- function actualizarTotal() {
-    const productos = [
-        {
-            cantidad: document.getElementById('cantidad-producto-1'),
-            precio: document.getElementById('precio-producto-1'),
-            total: document.getElementById('total-producto-1')
-        },
-        {
-            cantidad: document.getElementById('cantidad-producto-2'),
-            precio: document.getElementById('precio-producto-2'),
-            total: document.getElementById('total-producto-2')
-        }
-    ];
+const cerrarProducto = document.querySelector('.cerrar-producto')
 
-    let totalCarrito = 0;
+//Añadimos evento listener al boton cart que ejecutara 
+//una funcion cuando se haga click sobre el 
+btnCart.addEventListener('click', () => {
+   //una vez el usuario ha hecho click en el boton
+    //previamente seleccionado se ejecuta la funcion 
+    //.classList.toggle y activamos el interruptor
+    //en nuestra doble clase previamente asignada con 
+    //el display none en este caso Hidden-cart
+   containerCartProductos.classList.toggle('hidden-cart');
+      
+})
 
-    for (const producto of productos) {
-        const cantidad = parseInt(producto.cantidad.textContent);
-        const precio = parseFloat(producto.precio.textContent.replace('€', ''));
-        const total = cantidad * precio;
-        producto.total.textContent = total.toFixed(2) + '€';
-        totalCarrito += total;
-    }
+/* =======================  CARRITO   =========================== */
 
-    document.getElementById('total-carrito').textContent = totalCarrito.toFixed(2) + '€';
-}
+const cartInfo = document.querySelector ('.cart-product');
 
-document.querySelectorAll('.boton-menos').forEach((boton, index) => {
-    boton.addEventListener('click', () => {
-        const cantidad = document.getElementById(`cantidad-producto-${index + 1}`);
-        const nuevaCantidad = Math.max(0, parseInt(cantidad.textContent) - 1);
-        cantidad.textContent = nuevaCantidad;
-        actualizarTotal();
-    });
+//Div donde insertaremos los diferentes elementos del carrito 
+const rowProduct = document.querySelector ('.row-product');
+
+
+//Lista de todos los contenedores de productos
+const productList = document.querySelector ('.card_container');
+
+//variable para el texto de carrito vacio
+
+const empty_car = document.querySelector('.empty_car');
+
+
+//variable de array de productos añadidos al carrito y tambien lo que tenemos en el localStorage
+let allProducts = JSON.parse(localStorage.getItem("carrito"))||[];
+
+
+//variable que trae el total a pagar de nuestro carrito
+const valorTotal = document.querySelector ('.total-pagar');
+const valorTotal2 = document.querySelector ('.total-pagar2');
+
+//variable que trae el numero de articulos añadidos al articulo 
+const countProducts = document.querySelector ('.contador_productos')
+
+//atrapamos los clicks del addEventListener inspeccionamos en chrome y le damos a console
+//e.target nos toma el elemento concreto de nuestro div
+//por ejemplo la imagen o el boton
+//e.target.classlist nos dira la clase del evento sobre el que hacemos click
+//.contains('btn_add_cart') nos devuelve un booleano diciendonos si contiene la clase 
+//se debe añadir una clase al boton previamente
+
+
+
+//eliminamos un producto 
+//añadimos un evento listener de tipo click a cada row de nuestro producto
+//comprobamos si el click se ha hecho en el icono de eliminar producto 
+rowProduct.addEventListener ('click',(e)=> {
+   if (e.target.classList.contains('cerrar-producto')){
+      //nos dirigimos al elemento padre y guardamos el titulo lo logico es tener un id determinado
+      const product = e.target.parentElement.parentElement;
+      //aplicamos .trim() para ocultar espacios en caso de que existan
+      //si tenemos espacios no nos podra  comparar correctamente en la funcion.filters
+      const n_product = product.querySelector('h3').textContent.trim();
+      
+
+
+      //buscamos en el array el elemento con titulo igual y lo eliminamos de la lista de articulos del carrito
+      //lo suyo es que cada  elementos tuviesen un ID unico
+      allProducts = allProducts.filter (
+         product => product.title !== n_product);
+
+         showHTML();
+         savelocal();
+         showHTMLCarrito();
+         
+        //containerCartProductos.style.display = 'block'; 
+         
+         console.log (allProducts);
+         //llamamos a la funcion showHTML para que vuelva a actualizar los elementos del carrito quitando
+        //el articulo que acabamos de eliminar 
+
+   }
+
 });
 
-document.querySelectorAll('.boton-mas').forEach((boton, index) => {
-    boton.addEventListener('click', () => {
-        const cantidad = document.getElementById(`cantidad-producto-${index + 1}`);
-        const nuevaCantidad = parseInt(cantidad.textContent) + 1;
-        cantidad.textContent = nuevaCantidad;
-        actualizarTotal();
-    });
-});
 
-document.querySelector('.boton-actualizar').addEventListener('click', () => {
-    actualizarTotal();
-});
-document.querySelectorAll('.papelera').forEach((papelera, index) => {
-    papelera.addEventListener('click', () => {
-        const producto = document.querySelector(`.producto-${index + 1}`);
-        producto.style.display = 'none';
+
+//Funcion para añadir html a nuestro carrito con productos nuevos 
+const showHTML = () => {
+
+   //modificamos la propiedad display para mostrar solo el texto de carrito vacio cuando 
+    //esta vacio por eso comprobamos que no hay ningun articulo en el carrito
+
+    if(allProducts.length==0){
+         empty_car.style.display = 'block';
+         
+      }else{
+         empty_car.style.display = 'none';
+      }
+
+   //colocamos texto si no tenemos nada en el carrito
+    //comprobamos si esta vacio comprobando que no nuestro array de articulos no tiene elementos
+
+
+   let total = 0;
+   let totalOfProducts = 0;
+
+
+   //limpiamos el html contenido en rowproduct
+   rowProduct.innerHTML = ``;
+   
+
+   //recorremos el array de productos con el metodo foreach
+   allProducts.forEach (product => {
+      //creamos con el dom un nuevo elemento html de tipo div
+      const containerProduct = document.createElement('div')
+
+      //le damos la clase cart-product que es la que hemos añadido al css
+      //para darle estilos
+      containerProduct.classList.add ('cart-product')
+
+
+      //añadimos la informacion dinamicamente con los elementos de nuestro producto
+        //utilizando innerHtml
+        //copiamos nuestro div previamente maquetado
+        //añadimos la informacion de nuestro elemento dentro del div con ${objeto.variabl}
+
+
+
+      containerProduct.innerHTML = `
+      <div class="info-cart-product">
+         <div class="card_imagen_carrito_pop_up">
+            <img src="${product.imagen}" alt="">
+         </div>
+         <button class="boton-menos"><span class="material-symbols-outlined">remove</span></button>
+         <span class="cantidad-producto-carrito"> ${product.quantity} </span>
+         <button class="boton-mas"><span class="material-symbols-outlined">add</span></button>
+         <div class="contenido-producto-carrito">
+            <h3 > ${product.title} </h3>
+         </div>
+         <span class="precio-producto-carrito"> ${product.price}</span>
+         <span class="material-symbols-outlined cerrar-producto">close</span>
+     </div>
+                
+     `
+
+     //añadimos al html nuestro innerHtml con el metodo append
+      //para añadirlo usamos rowproduct(que es el contenedor de productos previamente creado
+      // en el html  y almacenado en el js )
+     rowProduct.append(containerProduct);
+
+     // Creamos una varaible para poder restar y crear de nuevo el contnido. El boton solo restara
+     //Cuando sea mayor que 1, que la minima cantidad en el carrito
+
+     let restar = containerProduct.querySelector('.boton-menos');
+
+     restar.addEventListener('click', ()=>{
+      if (product.quantity !== 1){
+         product.quantity--;
+      }
+      // Tenemos que volver a cragra os productos
+      showHTML();
+      // Lo guardamos en local
+      savelocal();
+      showHTMLCarrito();
+     })
+
+     //Creamos una varaible para poder sumar la cantidad
+     let sumar = containerProduct.querySelector('.boton-mas');
+
+     sumar.addEventListener ('click', ()=>{
+      product.quantity++;
+      savelocal();
+      // Tenemos que volver a cragra os productos
+      showHTML();
+      // Lo guardamos en local
+      showHTMLCarrito ();
+     })
+
+    
+     total = total + parseInt(product.quantity * product.price.slice(1));
+
+     totalOfProducts = totalOfProducts + product.quantity;
+
+   });
+   const saveLocalTotal = () => {
+      localStorage.setItem("precioTotal", JSON.stringify (total));
+
+     }
+     saveLocalTotal (); 
+
+   //modificamos el valor del total a pagar con la suma del coste total de los
+    //añadidos al carrito  y el numero total de articulos
+   valorTotal.innerText = `${total}`;
+   countProducts.innerText = totalOfProducts;
+   
+};
+
+//llamamos para que nos ordene la primera vez que entramos en la web el carrito
+showHTML();
+
+
+
+// TRabajamos con local storage para guardar en el mavegador los elemntos
+// selecionados y para ello primero hacemos una constante donde guardamos los elemntos
+
+//set item
+const savelocal = () => {
+   localStorage.setItem("carrito", JSON.stringify (allProducts))
+};
+
+//get item
+
+// Leemos los elemntos que hay en el localStorage y los ponemos
+// en una array
+let listaComprarArray = JSON.parse(localStorage.getItem("carrito"));
+//console.log(listaComprarArray[0]);
+
+
+
+
+
+//Div donde insertaremos los diferentes elementos del carrito para pagar 
+const carritoProducts =  document.querySelector ('.carritoProduct');
+let contenidoCompra = localStorage.getItem("carrito");
+//variable que trae el total a pagar de nuestro carrito
+
+
+
+const showHTMLCarrito = () => { 
+
+    document.addEventListener("DOMContentLoaded", function(event){
+        let listaCompraObjArray = JSON.parse(localStorage.getItem("carrito"));
+        let total = JSON.parse(localStorage.getItem("precioTotal"));
         
-        const cantidad = document.getElementById(`cantidad-producto-${index + 1}`);
-        cantidad.textContent = '0';
         
-        actualizarTotal();
+        listaCompraObjArray.forEach(productoSelccionado => {
+            console.log (productoSelccionado);
+
+            const contenedorCarrito = document.createElement('div');
+            contenedorCarrito.classList.add ('contenido_producto_carrito');
+            
+           
+            contenedorCarrito.innerHTML = `
+            <div class="imagen_producto_titulo">
+               <img src="${productoSelccionado.imagen}" alt="">
+               
+               <h3 > ${productoSelccionado.title} </h3>
+            </div>
+            <div class="botones_producto_carrito">
+               <button class="listaBotonMenos"><span class="material-symbols-outlined">remove</span></button>
+               <span class="cantidad-producto-carrito"> ${productoSelccionado.quantity} </span>
+               <button class="listaBotonMas"><span class="material-symbols-outlined">add</span></button>
+            </div>
+            <div class="precio_producto_carrito">
+               <span class="listaPrecioProducto"> ${productoSelccionado.price}</span>
+            </div>
+
+              `;
+            carritoProducts.append(contenedorCarrito);
+
+            let restar = carritoProducts.querySelector('.listaBotonMenos');
+            let cantidad_producto = carritoProducts.querySelector('.cantidad-producto-carrito');
+
+            restar.addEventListener('click', ()=>{
+               if (productoSelccionado.quantity !== 1){
+                  productoSelccionado.quantity--;
+               }
+               console.log(productoSelccionado.quantity)
+               // Tenemos que volver a cragra los productos
+               cantidad_producto.innerHTML = `${productoSelccionado.quantity}`;
+               //showHTML();
+               //showHTMLCarrito();
+               // Lo guardamos en local
+               /*savelocal();*/
+            })
+
+         //Creamos una varaible para poder sumar la cantidad
+         let sumar = carritoProducts.querySelector('.listaBotonMas');
+
+         sumar.addEventListener ('click', ()=>{
+            productoSelccionado.quantity++;
+            cantidad_producto.innerHTML = `${productoSelccionado.quantity}`;
+            console.log(productoSelccionado.quantity)
+            //showHTML();
+            //showHTMLCarrito();
+            /*savelocal();*/
+            // Tenemos que volver a cragra os productos
+            }) 
+            
+        });
+        valorTotal2.textContent = `${total}`;
+        console.log(total);
+        
     });
-});
 
-
-function mostrarProductos() {
-    document.querySelectorAll('.producto-1, .producto-2').forEach(producto => {
-        producto.style.display = 'grid';
-    });
-}
-
-document.querySelector('.boton-actualizar').addEventListener('click', () => {
-    mostrarProductos();
-});
+};
+showHTMLCarrito ();
