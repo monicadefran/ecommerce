@@ -225,6 +225,7 @@ const showHTML = () => {
       //para añadirlo usamos rowproduct(que es el contenedor de productos previamente creado
       // en el html  y almacenado en el js )
      rowProduct.append(containerProduct);
+     
 
      // Creamos una varaible para poder restar y crear de nuevo el contnido. El boton solo restara
      //Cuando sea mayor que 1, que la minima cantidad en el carrito

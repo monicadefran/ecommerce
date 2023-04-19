@@ -296,7 +296,7 @@
   
   /**** CARRITO ****/
 
-  .carritoProduct {
+  .carrito {
     grid-area: carrito;
     display: flex;
     justify-content: center;
@@ -307,18 +307,10 @@
 /**** TITULO CARRITO ****/
 
   .titulo {
-    grid-area: titulo;
+   display: flex;
+   justify-content: center;
     padding-bottom: 30px;
   }
-
-/**** TITULO ENCABEZADO ****/
-  
- .encabezado {
-    display: flex;
-    font-weight: bold;
-    justify-content: space-around;
-  }
-
 
   /******** PRODUCTO ********/
 
@@ -326,12 +318,15 @@
    display: flex;
    justify-content: space-around;
    flex-direction: column;
-   /*row-gap: 20px;*/
+   background-color: #f1f0f0;
+   border-radius: 30px;
+   padding-top: 20px;
+   padding-bottom: 20px;
   }
 
   .imagen_producto_titulo{
     display: flex;
-    margin-left: -30px;
+    width: 250px;
   
   } 
 
@@ -363,6 +358,10 @@
        margin-left: 20px;
   }
 
+  .cantidad-producto-carrito2 {
+   font-size: 20px;
+  }
+
 .listaBotonMenos , .listaBotonMas {
    background-color: rgb(101, 101, 202);
       color: #fff;
@@ -377,17 +376,27 @@
 
 }
 
-.botones_producto_carrito {
-   margin-left: -30px;
+.cantidad_producto {
+   width: 40px;
+   display: flex;
+   justify-content: center;
 }
 
 .precio_producto_carrito {
-   margin-left: -30px;
+   width: 70px;
+   display: flex;
+   justify-content: center;
 }
 
 .sumaTotal{
    display: flex;
    justify-content: end;
+   
+}
+
+.total-pagar2{
+   font-weight: bold;
+   font-size: 20px;
 }
 
 .finalizar_compra {
@@ -411,9 +420,52 @@
    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
  }
 
+ .compra_exito {
+   background-color: #f1f0f0;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   padding: 20px;
+   
+ }
 
-  
+ .compra_exito  h1, h4 ,p {
+   display: flex;
+   justify-content: space-around;
 
+ }
+.blog {
+   display: flex;
+   justify-content: space-around;
+
+}
+
+ .btn_blog {
+   background-color: rgb(101, 202, 103);;
+   font-size: 20px;
+   padding: 12px 28px;
+   border-radius: 4px;
+   border: none;
+   color: white;
+   padding: 16px 32px;
+   text-align: center;
+   text-decoration: none;
+ }
+
+
+
+.btn_error_compra {
+   background-color: rgb(46, 66, 215);;
+   font-size: 20px;
+   padding: 12px 28px;
+   border-radius: 4px;
+   border: none;
+   color: white;
+   padding: 16px 32px;
+   text-align: center;
+   text-decoration: none;
+}
 
   
 /**** FOOTER ****/
