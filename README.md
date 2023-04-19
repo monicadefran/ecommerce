@@ -1,6 +1,6 @@
 # Ecommerce proyecto grupo 4. 
         
-## Presentación  
+# Presentación  
  El proyecto forma parte de una práctica dentro del programa Bootcam de Full Stack de Factoría 5, en el que el objetivo principal es cubir temas
  como la organización del proyecto diseñando distintas paginas web en HTML5, dominar conceptos de CSS como Grid, Flex-Box y media queries, 
  así como iniciar el apredizaje de JavaScript añadiendo cierta intecatividad dentro del proyecto que iremos ampliando.
@@ -13,8 +13,7 @@ variando las cantidades. La selcciones se guarda en Local Storage.
 La tramitación del producto se realiza desde la pagina web carrito. 
            
   # Arquitectura del Código. 
-      A continuación se explica la estructura de carpetas y que archivos son relenvantes 
-      y su ubicación. 
+      A continuación se explica la estructura de carpetas. 
       - *Carrito* : Donde se ecnuentran los archivos relaccionados con la web de compra. 
       - *Detalle* : Archivos en los que encontramos los detalles de los productos.
       - *Fotos* : Fotos de los productos.
